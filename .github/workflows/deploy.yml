@@ -25,7 +25,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
       - name: Configurar pnpm
         uses: pnpm/action-setup@v4
@@ -33,15 +32,17 @@ jobs:
           version: 10.4.1
 
       - name: Instalar dependências
+        working-directory: Site projeto
         run: pnpm install --frozen-lockfile
 
       - name: Compilar frontend
+        working-directory: Site projeto
         run: pnpm exec vite build
 
       - name: Preparar artefato do Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/public
+          path: Site projeto/dist/public
 
   deploy:
     environment:
