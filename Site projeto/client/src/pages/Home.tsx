@@ -86,6 +86,7 @@ export default function Home() {
           <a href="#especificacoes" onClick={closeMenu}>Especificações</a>
           <a href="#funcionamento" onClick={closeMenu}>Funcionamento</a>
           <a href="#desenho-tecnico" onClick={closeMenu}>Desenho técnico</a>
+          <a href="https://beast-robotics-br.github.io/FUTBOTS_Site/" target="_blank" rel="noreferrer" onClick={closeMenu}>Controle</a>
         </nav>
         <button className="theme-button" type="button" onClick={toggleTheme} aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"} title={theme === "dark" ? "Modo claro" : "Modo escuro"}>
           {theme === "dark" ? <Sun size={17} /> : <Moon size={17} />}
